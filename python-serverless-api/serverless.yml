@@ -1,0 +1,17 @@
+service: aws-python3-api
+
+provider:
+  name: aws
+  role: "OWASP"
+  runtime: python3.7
+  versionFunctions: false
+  memorySize: 12
+  region: us-west-2
+
+functions:
+  hello:
+    handler: handler.hello1
+  events:
+    - http:
+        path: first-endpoint
+        method: GET
